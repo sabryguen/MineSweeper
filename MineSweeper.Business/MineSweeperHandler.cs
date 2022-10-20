@@ -1,4 +1,5 @@
-﻿using MineSweeper.Business.Contracts;
+﻿using Microsoft.Extensions.Logging;
+using MineSweeper.Business.Contracts;
 using MineSweeper.Models;
 
 namespace MineSweeper.Business
@@ -10,13 +11,22 @@ namespace MineSweeper.Business
     {
         private readonly IMineSweeperService _service;
 
-        public MineSweeperHandler(IMineSweeperService service)
+        private readonly ILogger<MineSweeperHandler> _logger;
+
+        public MineSweeperHandler(IMineSweeperService service, ILogger<MineSweeperHandler> logger)
         {
             _service = service;
+            _logger = logger;
         }
 
         public void Run()
         {
+            _logger.LogInformation("Welcome to a console based Mine Sweeper game demo");
+            _logger.LogInformation("Please use one of the 4 arrow keys on your keyboard to move around the grid");
+            _logger.LogInformation("The aim of the game is to traverse the grid from the starting position to the far right of the grid without losing all your lives.");
+            _logger.LogInformation("Best of luck!");
+
+
             while (true)
             {
                 // Read the player's input.

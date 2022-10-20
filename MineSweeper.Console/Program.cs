@@ -1,10 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Console;
 using MineSweeper.Business;
 using MineSweeper.Business.Contracts;
 using MineSweeper.Business.Services;
-using System.Diagnostics;
 
 namespace MineSweeper.Console
 {
